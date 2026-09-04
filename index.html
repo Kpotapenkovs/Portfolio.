@@ -1,38 +1,38 @@
 <!doctype html>
-<html lang="en">
+<html lang="lv">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Still / Wild, a thoughtful design and development portfolio." />
-  <title>Still / Wild — Portfolio</title>
+  <meta name="description" content="Mani sauc Konstantīns" />
+  <title>Mani sauc Konstantīns</title>
   <link rel="stylesheet" href="styles.css" />
   <script src="script.js" defer></script>
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
   <main id="top">
-    <section class="hero section-pad">
+    <header class="site-header section-pad">
+      <a class="wordmark" href="#top"><span>K</span> Konstantīns</a>
+      <nav aria-label="Galvenā navigācija">
+        <a href="#about">Par mani</a>
+        <a href="#work">Mani projekti</a>
+      </nav>
+    </header>
+    <section id="home" class="hero section-pad view-section is-active">
       <div class="hero-copy reveal">
-        <p class="eyebrow">Independent designer + developer <span>Based wherever the light is good</span></p>
-        <h1>Ideas with<br /><em>room to breathe.</em></h1>
-        <p class="hero-intro">I create thoughtful digital experiences and identities for brands that want to feel honest, considered, and alive.</p>
-        <a class="text-link" href="#work">Scroll to explore <span class="line"></span> <span>↓</span></a>
+        <h1>Mani sauc<br /><em>Konstantīns.</em></h1>
       </div>
-      <div class="hero-art reveal delay-1" aria-label="Abstract misty mountain landscape" role="img">
-        <div class="sun"></div><div class="ridge ridge-back"></div><div class="ridge ridge-mid"></div><div class="ridge ridge-front"></div><div class="fog fog-one"></div><div class="fog fog-two"></div>
-        <div class="hero-caption"><span>47° 32' N</span><span>field note / 2024</span></div>
-      </div>
+      <div class="hero-art reveal delay-1" aria-hidden="true"></div>
     </section>
-    <section id="work" class="work section-pad">
-      <div class="section-heading reveal"><p class="eyebrow">A few things I've made</p><span>( 01 — 03 )</span></div>
+    <section id="work" class="work section-pad view-section">
+      <div class="section-heading reveal"><p class="eyebrow">Projekti</p><span>( 01 — 03 )</span></div>
       <div class="project-list">
-        <article class="project reveal"><div class="project-meta"><span>01 / Brand world</span><span>Rewilding tomorrow</span></div><div class="project-visual visual-green"><span>ALMANAC</span><small>FIELD NOTES FOR A LIVING PLANET</small></div><div class="project-foot"><h2>Almanac</h2><a href="#about">Read more ↗</a></div></article>
-        <article class="project reveal"><div class="project-meta"><span>02 / Digital experience</span><span>Slow, by design</span></div><div class="project-visual visual-blue"><span>SELVAGE</span><small>OBJECTS WITH A SECOND LIFE</small></div><div class="project-foot"><h2>Selvage</h2><a href="#about">Read more ↗</a></div></article>
-        <article class="project reveal"><div class="project-meta"><span>03 / Editorial direction</span><span>Forage / Issue 04</span></div><div class="project-visual visual-amber"><span>FORAGE</span><small>THE WILD IS IN THE DETAILS</small></div><div class="project-foot"><h2>Forage</h2><a href="#about">Read more ↗</a></div></article>
+        <article class="project reveal"><div class="project-visual visual-green" aria-label="Vieta projekta bildei"></div><div class="project-foot"><a href="#" aria-label="GitHub saite">GitHub ↗</a></div></article>
+        <article class="project reveal"><div class="project-visual visual-blue" aria-label="Vieta projekta bildei"></div><div class="project-foot"><a href="#" aria-label="GitHub saite">GitHub ↗</a></div></article>
+        <article class="project reveal"><div class="project-visual visual-amber" aria-label="Vieta projekta bildei"></div><div class="project-foot"><a href="#" aria-label="GitHub saite">GitHub ↗</a></div></article>
       </div>
     </section>
-    <section id="about" class="about section-pad"><div class="section-heading reveal"><p class="eyebrow">A little context</p><span>( 02 )</span></div><div class="about-grid"><h2 class="reveal">Good work feels<br /><em>like a clearing.</em></h2><div class="about-copy reveal delay-1"><p>I partner with founders, artists, and small teams to turn a strong point of view into something people can feel.</p><p>My practice moves between strategy, visual identity, and the web. I care about clarity, rhythm, and the quiet details that make a brand feel lived in.</p><a class="text-link" href="#work">View my work <span class="line"></span> <span>↗</span></a></div></div></section>
+    <section id="about" class="about section-pad view-section"><div class="section-heading reveal"><p class="eyebrow">Prasmes</p><span>( 02 )</span></div><div class="about-grid"><div class="about-copy reveal delay-1"><p class="skills">Māku izmantot Laravel, React, JavaScript, PHP, C++, HTML/CSS</p></div></div></section>
   </main>
-  <footer class="site-footer section-pad"><span>Still / Wild © 2024</span><span>Made slowly, with care.</span><a href="#top">Back to top ↑</a></footer>
 </body>
 </html>
