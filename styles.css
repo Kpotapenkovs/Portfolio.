@@ -7,7 +7,7 @@
   --muted: rgba(24, 48, 34, 0.72);
   --line: rgba(24, 48, 34, 0.28);
   --white-soft: rgba(24, 48, 34, 0.84);
-  --window-white: rgba(255, 255, 255, 0.7);
+  --window-white: rgba(255, 255, 255, 0.3);
   --font: Georgia, serif;
   --page-background: url('background.avif');
 }
@@ -86,7 +86,7 @@ a { color: inherit; text-decoration: none; }
   width: 4px;
   height: 100%;
   border-radius: 999px;
-  background: rgba(241, 242, 234, 0.18);
+  background: rgba(39, 71, 55, 0.2);
   overflow: hidden;
 }
 .seekbar-fill {
@@ -95,7 +95,7 @@ a { color: inherit; text-decoration: none; }
   width: 100%;
   height: 54%;
   border-radius: inherit;
-  background: linear-gradient(180deg, #dfe9da, #a7d6a9);
+  background: linear-gradient(180deg, #4f8b63, #23613d);
 }
 .floating-nav {
   display: grid;
