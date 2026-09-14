@@ -11,28 +11,98 @@
 <body>
   <div class="grain" aria-hidden="true"></div>
   <main id="top">
-    <header class="site-header section-pad">
-      <a class="wordmark" href="#top"><span>K</span> Konstantīns</a>
-      <nav aria-label="Galvenā navigācija">
-        <a href="#about">Par mani</a>
-        <a href="#work">Mani projekti</a>
+     <header class="site-header section-pad" aria-label="Galvenā navigācija">
+      <div class="panel-top">
+        <a class="wordmark" href="#top"><span>K</span> Konstantīns</a>
+        <div class="seekbar" aria-label="Pārejas josla">
+          <span class="seekbar-track"><span class="seekbar-fill"></span></span>
+        </div>
+      </div>
+
+      <nav class="floating-nav" aria-label="Galvenā navigācija">
+        <div class="nav-row nav-row-top">
+          <a class="nav-btn" href="#top">
+            <span class="nav-icon">K</span>
+            <span class="nav-label">Sākums</span>
+            <span class="nav-popup">Sākuma lapa</span>
+          </a>
+          <a class="nav-btn" href="#about">
+            <span class="nav-icon">P</span>
+            <span class="nav-label">Par mani</span>
+            <span class="nav-popup">Par mani</span>
+          </a>
+        </div>
+
+        <div class="nav-row nav-row-bottom">
+          <a class="nav-btn" href="#work">
+            <span class="nav-icon">P</span>
+            <span class="nav-label">Projekti</span>
+            <span class="nav-popup">Mani projekti</span>
+          </a>
+          <a class="nav-btn" href="#contact">
+            <span class="nav-icon">C</span>
+            <span class="nav-label">Kontakti</span>
+            <span class="nav-popup">Kontaktinformācija</span>
+          </a>
+        </div>
       </nav>
     </header>
     <section id="home" class="hero section-pad view-section is-active">
       <div class="hero-copy reveal">
-        <h1>Mani sauc<br /><em>Konstantīns.</em></h1>
+        <h1>Mani sauc Konstantīns</h1>
+        <p>Esmu Vidzemes Tehnoloģiju un dizaina tehnikuma 4. kursa programmēšanas tehniķis.</p>
       </div>
-      <div class="hero-art reveal delay-1" aria-hidden="true"></div>
     </section>
     <section id="work" class="work section-pad view-section">
-      <div class="section-heading reveal"><p class="eyebrow">Projekti</p><span>( 01 — 03 )</span></div>
+      <div class="section-heading reveal"><p class="eyebrow">Projekti</p></div>
       <div class="project-list">
-        <article class="project reveal"><div class="project-visual visual-green" aria-label="Vieta projekta bildei"></div><div class="project-foot"><a href="#" aria-label="GitHub saite">GitHub ↗</a></div></article>
-        <article class="project reveal"><div class="project-visual visual-blue" aria-label="Vieta projekta bildei"></div><div class="project-foot"><a href="#" aria-label="GitHub saite">GitHub ↗</a></div></article>
-        <article class="project reveal"><div class="project-visual visual-amber" aria-label="Vieta projekta bildei"></div><div class="project-foot"><a href="#" aria-label="GitHub saite">GitHub ↗</a></div></article>
+        <article class="project reveal"><div class="project-visual visual-green"><a class="image-preview" href="PNGprojects/music1.png"><img src="PNGprojects/music1.png" alt="Music1 projekta priekšskatījums" /></a></div><div class="project-info"><h3>Music1</h3><p>Šīs projekts ir mūzikas izveide uz pianoroll(klavierēm), kur spiežot uz logiem var uzlikt nots un ja zināt kā salikt notis var sanāk skaista melodija.</p><p class="project-tech"><strong>Tehnoloģijas:</strong> React, Javascript, CSS</p></div><div class="project-foot"><a href="https://github.com/Kpotapenkovs/music1" aria-label="GitHub saite" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></article>
+        <article class="project reveal"><div class="project-visual visual-blue project-gallery" aria-label="Minigames projekta attēli"><a class="image-preview" href="PNGprojects/minigames1.png"><img src="PNGprojects/minigames1.png" alt="Minigames projekta pirmais priekšskatījums" /></a><a class="image-preview" href="PNGprojects/minigames2.png"><img src="PNGprojects/minigames2.png" alt="Minigames projekta otrais priekšskatījums" /></a></div><div class="project-info"><h3>Minigames</h3><p>Mazu spēļu kolekcija ar vienkāršu un pārskatāmu lietotāja saskarni.</p><p class="project-tech"><strong>Tehnoloģijas:</strong> JavaScript, HTML, CSS, Laravel, PHP, Blade</p></div><div class="project-foot"><a href="https://github.com/Kpotapenkovs/minigames" aria-label="GitHub saite" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></article>
+        <article class="project reveal"><div class="project-visual visual-amber"><a class="image-preview" href="PNGprojects/weather.png"><img src="PNGprojects/weather.png" alt="Weather projekta priekšskatījums" /></a></div><div class="project-info"><h3>Weather</h3><p>Laikapstākļu projekta ideja ar skaidru informācijas attēlojumu.</p><p class="project-tech"><strong>Tehnoloģijas:</strong> JavaScript, API, PHP, CSS, HTML</p></div><div class="project-foot"><a href="https://github.com/Kpotapenkovs/weather" aria-label="GitHub saite" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></article>
       </div>
     </section>
-    <section id="about" class="about section-pad view-section"><div class="section-heading reveal"><p class="eyebrow">Prasmes</p><span>( 02 )</span></div><div class="about-grid"><div class="about-copy reveal delay-1"><p class="skills">Māku izmantot Laravel, React, JavaScript, PHP, C++, HTML/CSS</p></div></div></section>
+    <section id="about" class="about section-pad view-section">
+      <div class="about-grid">
+        <div class="about-copy reveal delay-1">
+          <h5>Par mani </h5>
+          <p>
+            Mani interesē mājaslapu izstrāde gan frontend, gan backend. <br>
+            Esmu veidojis vairākas mājaslapas, gan viens gan komandā, dažus no tām var redzēdz sadaļā "Mani projekti".
+          </p>
+          <h5>Intereses</h5>
+          <p>
+            man patīk mājaslapu izstrāde, kā arī brīvajā laikā varu nodarboties ar mūziku, un to izveidi (pagaidām neesmu publicējis).
+          </p>
+        </div>
+        <div class="about-copy reveal delay-1">
+          <p>
+            Savos projektos esmu centies veidot vairāk funkcionalitāti, nekā vizuālo izskatu. <br>
+          </p>
+          <h5>Prasmes</h5>
+          <p class="skills">
+            <strong>Valodas:</strong> PHP, JavaScript, HTML/CSS, C++, MySQL<br>
+            <strong>Tehnoloģijas:</strong> Laravel, React, Tailwind CSS, Laragon
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="contact section-pad view-section">
+      <div class="contact-heading reveal">
+        <p class="eyebrow">Kontakti</p>
+        <h2>Sazinies ar mani</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-copy reveal">
+          <p>Ja vēlasties sazināties ar mani, uzrakstiet man ziņu.</p>
+          <div class="contact-details">
+            <div><span>E-pasts</span><strong>e-pasts: kpootapenkovs@gmail.com</strong></div>
+            <div><span>Tālrunis</span><strong>tālrunis: +371 26822914</strong></div>
+            <div><span>Atrašanās vieta</span><strong>mana dzīves vieta: Latvija, Cēsis</strong></div>
+          </div>
+          <a class="contact-link" href="https://github.com/Kpotapenkovs" target="_blank" rel="noopener noreferrer">Mans github profils</a>
+        </div>
+      </div>
+    </section>
   </main>
 </body>
 </html>

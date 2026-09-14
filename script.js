@@ -1,14 +1,18 @@
 const revealItems = document.querySelectorAll('.reveal');
+const imagePreviews = document.querySelectorAll('.image-preview');
 
 const viewSections = document.querySelectorAll('.view-section');
 const sectionLinks = document.querySelectorAll('.site-header a[href^="#"]');
 
 const showSection = (sectionId) => {
-  const selectedSection = document.querySelector(sectionId === 'top' ? '#home' : sectionId);
+  const requestedSection = sectionId === 'top' ? '#home' : sectionId;
+  const selectedSection = document.querySelector(requestedSection);
   if (!selectedSection) return;
 
   viewSections.forEach((section) => {
-    section.classList.toggle('is-active', section === selectedSection);
+    const isSelected = section === selectedSection;
+    section.classList.toggle('is-active', isSelected);
+    section.classList.toggle('is-hidden', section.id === 'home' && !isSelected);
   });
 
   sectionLinks.forEach((link) => {
@@ -20,13 +24,23 @@ const showSection = (sectionId) => {
 sectionLinks.forEach((link) => {
   link.addEventListener('click', (event) => {
     event.preventDefault();
-    const sectionId = link.getAttribute('href').slice(1);
-    showSection(sectionId === 'top' ? 'top' : `#${sectionId}`);
-    history.replaceState(null, '', link.getAttribute('href'));
+    const rawHref = link.getAttribute('href');
+    const targetId = rawHref === '#top' ? 'top' : rawHref;
+    const selectedSection = document.querySelector(targetId === 'top' ? '#home' : targetId);
+
+    if (selectedSection && selectedSection.classList.contains('is-active')) {
+      showSection('top');
+      sectionLinks.forEach((navigationLink) => navigationLink.removeAttribute('aria-current'));
+      history.replaceState(null, '', '#top');
+      return;
+    }
+
+    showSection(targetId);
+    history.replaceState(null, '', rawHref);
   });
 });
 
-showSection(window.location.hash ? window.location.hash : 'top');
+showSection('top');
 
 const revealObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach((entry) => {
@@ -37,6 +51,37 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
 }, { threshold: 0.14 });
 
 revealItems.forEach((item) => revealObserver.observe(item));
+
+const lightbox = document.createElement('div');
+lightbox.className = 'image-lightbox';
+lightbox.hidden = true;
+lightbox.innerHTML = '<button class="lightbox-close" type="button" aria-label="Aizvērt attēlu">&times;</button><img alt="" />';
+document.body.append(lightbox);
+
+const lightboxImage = lightbox.querySelector('img');
+const closeLightbox = () => {
+  lightbox.hidden = true;
+  document.body.style.overflow = '';
+};
+
+imagePreviews.forEach((preview) => {
+  preview.addEventListener('click', (event) => {
+    event.preventDefault();
+    const image = preview.querySelector('img');
+    lightboxImage.src = preview.href;
+    lightboxImage.alt = image.alt;
+    lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+lightbox.addEventListener('click', (event) => {
+  if (event.target === lightbox || event.target.classList.contains('lightbox-close')) closeLightbox();
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && !lightbox.hidden) closeLightbox();
+});
 
 const contactForm = document.querySelector('.contact-form');
 
