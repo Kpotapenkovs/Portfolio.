@@ -37,6 +37,7 @@ sectionLinks.forEach((link) => {
 
     showSection(targetId);
     history.replaceState(null, '', rawHref);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 });
 

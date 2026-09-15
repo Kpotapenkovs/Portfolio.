@@ -417,16 +417,49 @@ h1 em, h2 em { font-family: var(--font); }
 .site-footer a { text-decoration: underline; }
 .reveal, .reveal.visible { opacity: 1; transform: none; }
 @media (max-width: 720px) {
+  html,
+  body {
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
   .section-pad { padding-left: 22px; padding-right: 22px; }
-  .view-section.is-active { top: 0; right: 12px; bottom: 72px; left: 12px; max-height: calc(100vh - 176px); box-shadow: none; }
-  .hero { display: flex; flex-direction: column; min-height: auto; padding-top: 214px; }
+  .site-header {
+    position: sticky;
+    top: 0;
+    right: auto;
+    left: auto;
+    display: grid;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 12px 8px;
+    background: rgba(25, 52, 38, 0.72);
+  }
+  .panel-top { width: 100%; height: 48px; padding: 6px 8px; }
+  .floating-nav { gap: 5px; width: 100%; height: 58px; padding: 4px; }
+  .nav-btn { min-height: 46px; padding: 5px 3px; border-radius: 7px; }
+  .nav-icon { width: 22px; height: 22px; }
+  .nav-label { font-size: 8px; }
+  .view-section.is-active,
+  .work.view-section.is-active,
+  .about.view-section.is-active,
+  .contact.view-section.is-active {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    min-height: calc(100svh - 124px);
+    max-height: none;
+    overflow: visible;
+    box-shadow: none;
+  }
+  .hero { display: flex; flex-direction: column; min-height: calc(100svh - 124px); padding-top: 76px; }
   .hero-copy { padding-bottom: 0; }
   .hero-art { height: 92vw; min-height: 330px; }
-  .work { padding-top: 168px; padding-bottom: 78px; }
-  .about.view-section.is-active { top: 0; right: 12px; bottom: auto; left: 12px; max-height: calc(100vh - 150px); box-shadow: none; }
-  .about { padding-top: 148px; padding-bottom: 38px; }
-  .contact.view-section.is-active { top: 0; right: 12px; bottom: auto; left: 12px; max-height: calc(100vh - 150px); box-shadow: none; }
-  .contact { padding-top: 148px; padding-bottom: 62px; }
+  .work { padding-top: 54px; padding-bottom: 78px; }
+  .about { padding-top: 54px; padding-bottom: 38px; }
+  .contact { padding-top: 54px; padding-bottom: 62px; }
   .contact-grid { margin-top: 28px; }
   .contact-copy p { font-size: 16px; }
   .project-list, .about-grid { margin-top: 48px; }
@@ -436,4 +469,12 @@ h1 em, h2 em { font-family: var(--font); }
   .about-copy { margin-top: 48px; }
   .site-footer { flex-wrap: wrap; gap: 14px; }
   .site-footer span:nth-child(2) { width: 100%; order: 3; }
+}
+
+@media (max-width: 380px) {
+  .section-pad { padding-left: 16px; padding-right: 16px; }
+  .site-header { padding-left: 8px; padding-right: 8px; }
+  .nav-btn { padding-right: 1px; padding-left: 1px; }
+  .nav-label { font-size: 7px; letter-spacing: 0.04em; }
+  .contact-heading h2 { font-size: 34px; }
 }
